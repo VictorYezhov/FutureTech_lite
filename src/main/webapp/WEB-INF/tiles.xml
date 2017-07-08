@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+
+<tiles-definitions>
+    <definition name="base.definition" template="/views/layouts/default/template.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="header" value="/views/layouts/default/header.jsp"/>
+        <put-attribute name="sidebar" value="/views/layouts/default/sidebar.jsp"/>
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/views/layouts/default/footer.jsp"/>
+    </definition>
+
+    <definition name="*-*-*" extends="base.definition">
+        <put-attribute name="body" value="/{1}/{2}/{3}.jsp"/>
+    </definition>
+
+    <definition name="admin.definition" template="/views/layouts/admin/template.jsp">
+        <put-attribute name="header" value="/views/layouts/admin/header.jsp" />
+        <put-attribute name="sidebar" value="/views/layouts/admin/sidebar.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/views/layouts/admin/footer.jsp" />
+    </definition>
+
+    <definition name="adminPage" extends="admin.definition">
+        <put-attribute name="body" value="/views/admin/adminPage.jsp" />
+    </definition>
+    <definition name="allUsersList" extends="admin.definition">
+        <put-attribute name="body" value="/views/admin/allUsersList.jsp" />
+    </definition>
+    <definition name="newBrand" extends="admin.definition">
+        <put-attribute name="body" value="/views/admin/newBrand.jsp" />
+    </definition>
+    <definition name="newMobileTelephone" extends="admin.definition">
+        <put-attribute name="body" value="/views/admin/newMobileTelephone.jsp" />
+    </definition>
+    <definition name="newMusicPlayer" extends="admin.definition">
+        <put-attribute name="body" value="/views/admin/newMusicPlayer.jsp"></put-attribute>
+    </definition>
+
+    <definition name="newPC" extends="admin.definition">
+        <put-attribute name="body" value="/views/admin/newPC.jsp"></put-attribute>
+    </definition>
+
+    <definition name="newTablet" extends="admin.definition">
+        <put-attribute name="body" value="/views/admin/newTablet.jsp"></put-attribute>
+    </definition>
+
+    <definition name="updateTelephone" extends="admin.definition">
+        <put-attribute name="body" value="/views/admin/updateTelephone.jsp"></put-attribute>
+    </definition>
+
+    <definition name="updateTablet" extends="admin.definition">
+        <put-attribute name="body" value="/views/admin/updateTablet.jsp"></put-attribute>
+    </definition>
+
+    <definition name="updatePC" extends="admin.definition">
+        <put-attribute name="body" value="/views/admin/updatePC.jsp"></put-attribute>
+    </definition>
+
+    <definition name="updateMP3" extends="admin.definition">
+        <put-attribute name="body" value="/views/admin/updateMp3.jsp"></put-attribute>
+    </definition>
+
+</tiles-definitions>
+
+    <!--<tiles-definitions>-->
+    <!--<definition name="base.definition" template="/views/layouts/default/template.jsp">-->
+        <!--<put-attribute name="header" value="/views/layouts/default/header.jsp"/>-->
+        <!--<put-attribute name="footer" value="/views/layouts/default/footer.jsp"/>-->
+        <!--<put-attribute name="title" value="Future Tech"/>-->
+    <!--</definition>-->
+    <!---->
+    <!--<definition name="*-*-*" extends="base.definition">-->
+        <!--<put-attribute name="body" value="/{1}/{2}/{3}.jsp"/>-->
+    <!--</definition>-->
+
+<!--</tiles-definitions>-->

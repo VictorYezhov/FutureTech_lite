@@ -1,0 +1,18 @@
+package com.futureTech.validator.UserValidator;
+
+/**
+ * Created by Victor on 06.06.2017.
+ */
+public interface UserValidatorMessages {
+
+    String EMPTY_USERNAME_FIELD =" EMPTY USERNAME FIELD";
+    String USERNAME_ALREADY_EXIST =" USERNAME ALREADY EXIST";
+    String EMPTY_EMAIL_FIELD="EMAIL FILD IS EMPTY";
+    String INCORRECT_EMAIL="EMAIL IS INCORRECT";
+    String EMAIL_ALREDY_EXIST=" EMAIL ALREADY EXIST";
+    String EMPTY_PASSWORD_FIELD="EMPTY PASSWORD FIELD";
+    String INCORRECT_PASSWORD_FIELD="PASSWORD MUST CONTAIN MORE THAN 4 CHARACTERS";
+
+
+
+}
