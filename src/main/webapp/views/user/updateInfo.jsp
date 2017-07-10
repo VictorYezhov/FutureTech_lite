@@ -20,45 +20,45 @@
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">Name</label>
             <div class="col-sm-10">
-                <input onkeyup="check();" type="text" class="form-control" id="name" name="name" placeholder="Please enter new Name" value="${null}" required>
+                <input onkeyup="check();" type="text" class="form-control" id="name" name="name" placeholder="Please enter new Name" value="${null}" >
             </div>
         </div>
 
         <div class="form-group">
             <label for="address" class="col-sm-2 control-label">Address</label>
             <div class="col-sm-10">
-                <input onkeyup="check();" type="text" class="form-control"  id="address" name="address" placeholder="Please enter new Address" value="${null}" required>
+                <input onkeyup="check();" type="text" class="form-control"  id="address" name="address" placeholder="Please enter new Address" value="${null}" >
             </div>
         </div>
 
         <div class="form-group">
             <label for="email" class="col-sm-2 control-label">Email</label>
             <div class="col-sm-10">
-                <input onkeyup="check();" type="email" class="form-control"  id="email" name="email" placeholder="Please enter new Email" value="${null}" required>
+                <input onkeyup="check();" type="email" class="form-control"  id="email" name="email" placeholder="Please enter new Email" value="${null}" >
             </div>
         </div>
 
         <div class="form-group">
             <label for="image" class="col-sm-2 control-label">Avatar</label>
             <div class="col-sm-10">
-                <input onkeyup="check();" type="file" class="form-control"  id="image" name="image" value="${null}"  required>
+                <input onkeyup="check();" type="file" class="form-control"  id="image" name="image" value="${null}"  >
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-success" id="update-user" disabled="disabled">Save</button>
+                <button type="submit" class="btn btn-success" id="update-user" >Save</button>
             </div>
         </div>
 
     </form:form>
 </div>
 
-<script>
-    function check() {
-        var name = document.getElementById('name'),
-            address = document.getElementById('address'),
-            email = document.getElementById('email');
-        document.getElementById('update-user').disabled = name.value && address.value && email.value ? false : "disabled";
-    }
-</script>
+<%--<script>--%>
+    <%--function check() {--%>
+        <%--var name = document.getElementById('name'),--%>
+            <%--address = document.getElementById('address'),--%>
+            <%--email = document.getElementById('email');--%>
+        <%--document.getElementById('update-user').disabled = name.value && address.value && email.value ? false : "disabled";--%>
+    <%--}--%>
+<%--</script>--%>

@@ -21,6 +21,9 @@ public class OrderController {
     @Autowired
     OrdersService ordersService;
 
+    @Autowired
+    CommodityService commodityService;
+
 
     @GetMapping("/buy/{id}")
     public String buy(@PathVariable int id, Model model)
@@ -29,6 +32,7 @@ public class OrderController {
 
         model.addAttribute("order",ordersService.findOne(id));
 
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         return"views-user-checkout";
     }
 

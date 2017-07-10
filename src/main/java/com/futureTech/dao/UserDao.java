@@ -19,6 +19,7 @@ public interface UserDao extends JpaRepository<User, Integer> {
     @Query("select u from User u left join fetch u.orders o where u.id=:id")
     User findUserWithOrder(@Param("id") int id);
 
+
     User findByName(String name);
     User findByEmail(String email);
     List<User> findAllByOrderByName();

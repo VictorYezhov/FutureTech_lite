@@ -79,6 +79,7 @@ public class CommodityController {
 
 
 
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
 
         return "views-user-detailedDescription";
     }
@@ -94,6 +95,7 @@ public class CommodityController {
         if(principal.getName().equals("admin"))
         {
             model.addAttribute("adminError", "This is only administrative account, you can`t buy commodity from it");
+            model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
             return "views-user-error";
 
 
@@ -206,6 +208,7 @@ public class CommodityController {
         }catch (org.springframework.dao.DataIntegrityViolationException e)
         {
             model.addAttribute("deletingError", "This commodity is still in some orders, you can`t delete it");
+            model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
             return "views-user-error";
         }
 
@@ -248,6 +251,7 @@ public class CommodityController {
             default: {
 
                 model.addAttribute("errorWithCommodity", "No such commodity in DataBase");
+                model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
                 return "views-user-error";
             }
 
@@ -260,6 +264,7 @@ public String doFilter(Model model, @RequestParam("price1") double price1,@Reque
 
          model.addAttribute("items",commodityService.doFilter(price1,price2));
          model.addAttribute("brands", brandService.findAll());
+    model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         return "views-user-filtredCommodity";
 }
 
@@ -271,6 +276,7 @@ public String searchCommodity(@RequestParam("searchName")String searchedName, Mo
 
     model.addAttribute("items",commodityService.search(searchedName));
 
+    model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
     return "views-user-searchedCommodity";
 }
 

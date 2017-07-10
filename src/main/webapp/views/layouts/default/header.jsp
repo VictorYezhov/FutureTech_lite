@@ -21,9 +21,6 @@
                         <sec:authorize access="!isAuthenticated()">
                             <li><a href="/login"><i class="icon fa fa-lock"></i><spring:message code="label.login"/></a></li>
                         </sec:authorize>
-                        <sec:authorize access="!isAuthenticated()">
-                            <li><a href="/signUp"><i class="icon fa fa-user"></i><spring:message code="label.signUp"/></a></li>
-                        </sec:authorize>
                         <sec:authorize access="isAuthenticated()">
                             <li><form:form action="/logout" method="post">
                                 <button class="btn-log-out">LogOut</button>

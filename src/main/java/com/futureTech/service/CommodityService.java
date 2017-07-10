@@ -23,4 +23,6 @@ public interface CommodityService {
 
     List<Commodity> findCommoditiesByPrices( double startPrice, double endPrice);
 
+    double findCommodityWitMaxPrice();
+
 }

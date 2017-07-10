@@ -1,3 +1,4 @@
+<jsp:useBean id="maxPrice" scope="request" type="java.lang.Double"/>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -28,8 +29,8 @@
     </div>
     <div class="sidebar-widget-body">
         <input class="form-control" name="price" id="price">
-        <input class="form-control" name="price1" id="price1" type="hidden" value="0">
-        <input class="form-control" name="price2" id="price2" type="hidden" value="0">
+        <input class="form-control" name="price1" id="price1" type="hidden" value="2000">
+        <input class="form-control" name="price2" id="price2" type="hidden" value="20000">
         <div id="slider-range"></div>
     </div>
     <%--<div class="widget-header">--%>
@@ -59,8 +60,8 @@
         $( "#slider-range" ).slider({
             range: true,
             min: 0,
-            max: 30000,
-            values: [ 2000, 20000 ],
+            max: ${maxPrice},
+            values: [ 0, 100 ],
             slide: function( event, ui ) {
                 $( "#price" ).val( "₴" + ui.values[ 0 ] + " - ₴" + ui.values[ 1 ] );
                 $("#price1").val(ui.values[ 0 ]);

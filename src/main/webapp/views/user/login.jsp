@@ -1,4 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 <div class="sign-in-page">
     <div class="row">
         <!-- Sign-in -->
@@ -18,7 +20,11 @@
                 <button type="submit" class="btn-upper btn btn-primary checkout-page-button" disabled="disabled" id="login-btn">Login</button>
             </form:form>
         </div>
+
         <!-- Sign-in -->
+    </div>
+    <div>
+        <p>Haven`t got account yet? <a href="/signUp"><spring:message code="label.signUp"/></a></p>
     </div>
 </div>
 

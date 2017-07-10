@@ -3,6 +3,7 @@ package com.futureTech.controller;
 import com.futureTech.entity.Brand;
 import com.futureTech.entity.MobileTelephone;
 import com.futureTech.service.BrandService;
+import com.futureTech.service.CommodityService;
 import com.futureTech.service.MobileTelephoneService;
 import com.futureTech.serviceImpl.ImageSaver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class MobileTelephoneController {
 
     @Autowired
     MobileTelephoneService mobileTelephoneService;
+
+    @Autowired
+    CommodityService commodityService;
 
     @Autowired
     BrandService brandService;
@@ -113,6 +117,7 @@ public class MobileTelephoneController {
     {
         model.addAttribute("telephoneList", mobileTelephoneService.findAllPages(pageable));
         model.addAttribute("brands", brandService.findAll());
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         return "views-user-telephoneList";
     }
 

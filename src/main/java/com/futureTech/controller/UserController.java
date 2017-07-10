@@ -43,16 +43,20 @@ public class UserController {
     @Autowired
     private MP3Service mp3Service;
 
+    @Autowired
+    private CommodityService commodityService;
     @GetMapping("/login")
     public String login(Model model) {
         model.addAttribute("user", new User());
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         return "views-user-login";
     }
 
     @GetMapping("/signUp")
     public String signUp(Model model) {
         model.addAttribute("user", new User());
-        return "views-user-signUp";
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
+        return "views-user-singUp";
     }
 
     @PostMapping("/signUp")
@@ -60,12 +64,14 @@ public class UserController {
 
         String uuid = UUID.randomUUID().toString();
 
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         user.setUuid(uuid);
 
 
         if(!user.getPassword().equals(confirmPass))
         {
             model.addAttribute("passwordException", "Passwords are not same");
+            model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
             return "views-user-signUp";
         }
 
@@ -170,19 +176,21 @@ public class UserController {
         {
 
             return "redirect:/adminPage";
+
         }
 
-
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         model.addAttribute("user",userService.findUserWithOrder(Integer.parseInt(principal.getName())));
         //model.addAttribute("orders",userService.findUserWithOrder(Integer.parseInt(principal.getName())).getOrders());
         return "views-user-account";
     }
 
     @GetMapping("/updateUserInfo")
-    public String updateUser(/*Principal principal, Model model*/)
+    public String updateUser(/*Principal principal,*/ Model model)
     {
 
 
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
        // model.addAttribute("user",userService.findUserWithOrder(Integer.parseInt(principal.getName())));
         return "views-user-updateInfo";
     }
@@ -228,12 +236,14 @@ public class UserController {
             if (principal.getName().equals("admin")) {
 
                 model.addAttribute("adminError", "This is only administrative account, you can`t buy commodity from it");
+                model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
                 return "views-user-error";
             }
 
 
         model.addAttribute("orders", ordersService.findOrderByUser(userService.findOne(Integer.parseInt(principal.getName()))));
 
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
 
         return "views-user-shoppingCart";
     }
@@ -254,6 +264,7 @@ public class UserController {
 
         model.addAttribute("user", new User());
 
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         return "views-user-login";
     }
 

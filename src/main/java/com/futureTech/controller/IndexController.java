@@ -2,6 +2,7 @@ package com.futureTech.controller;
 
 import com.futureTech.entity.Role;
 import com.futureTech.service.BrandService;
+import com.futureTech.service.CommodityService;
 import com.futureTech.service.MailSenderService;
 import com.futureTech.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,18 +24,23 @@ public class IndexController {
     @Autowired
     BrandService brandService;
     @Autowired
+    CommodityService commodityService;
+    @Autowired
     private MailSenderService mailSenderService;
 
     @GetMapping({"/","index","home"})
     public String index(Model model){
 
 
+
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         model.addAttribute("brands", brandService.findAll());
+
         return "views-base-index";
     }
 
     @PostMapping({"/","index","home"})
-    public String indexAfterLogin(Principal principal){
+    public String indexAfterLogin(Principal principal,Model model){
 
 
 //        try {
@@ -46,13 +52,15 @@ public class IndexController {
 //            return "adminPage";
 //        }
 
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         return "views-base-index";
     }
 
     @GetMapping({"/contacts"} )
-    public String contacts(){
+    public String contacts(Model model){
 
 
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         return "views-user-contacts";
     }
 
@@ -65,12 +73,13 @@ public class IndexController {
 
     @PostMapping("/sendMessage")
     public  String sendMessage(@RequestParam("name")String name, @RequestParam("email")String email, @RequestParam("subject") String theme,
-                               @RequestParam("message") String mail )
+                               @RequestParam("message") String mail, Model model )
     {
 
 
         mailSenderService.sendMessageToAdministration(theme,mail,email, name);
 
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         return "views-user-sendMessage";
     }
 

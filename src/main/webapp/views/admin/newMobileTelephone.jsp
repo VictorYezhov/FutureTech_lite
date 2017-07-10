@@ -15,7 +15,7 @@
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">Name</label>
             <div class="col-sm-10">
-                <input name="name" type="text" class="form-control" id="name" required>
+                <input name="name" type="text" class="form-control" id="name" required="required">
             </div>
         </div>
         <div class="form-group">
@@ -32,7 +32,7 @@
         <div class="form-group">
             <label for="price" class="col-sm-2 control-label">Price</label>
             <div class="col-sm-10">
-                <input name="price" type="number" class="form-control" id="price" required>
+                <input name="price" type="number" class="form-control" id="price" required min="1">
             </div>
         </div>
         <div class="form-group">
@@ -60,37 +60,37 @@
         <div class="form-group">
             <label for="battery" class="col-sm-2 control-label">Battery Capacity</label>
             <div class="col-sm-10">
-                <input name="battery" type="number" class="form-control" id="battery" required>
+                <input name="battery" type="number" class="form-control" id="battery" required min="1">
             </div>
         </div>
         <div class="form-group">
             <label for="ammountofsim" class="col-sm-2 control-label">Amount of sim cards</label>
             <div class="col-sm-10">
-                <input name="amounts" type="number" class="form-control" id="ammountofsim" required>
+                <input name="amounts" type="number" class="form-control" id="ammountofsim" required min="0">
             </div>
         </div>
         <div class="form-group">
             <label for="memory" class="col-sm-2 control-label">Memory Gb</label>
             <div class="col-sm-10">
-                <input name="memory" type="number" class="form-control" id="memory" required>
+                <input name="memory" type="number" class="form-control" id="memory" required min="1">
             </div>
         </div>
         <div class="form-group">
             <label for="RAM" class="col-sm-2 control-label">RAM Gb</label>
             <div class="col-sm-10">
-                <input  name="RAM" type="number" class="form-control" id="RAM" required>
+                <input  name="RAM" type="number" class="form-control" id="RAM" required min="1">
             </div>
         </div>
         <div class="form-group">
             <label for="camera" class="col-sm-2 control-label">Camera</label>
             <div class="col-sm-10">
-                <input name="camera" type="text" class="form-control" id="camera" required>
+                <input name="camera" type="text" class="form-control" id="camera" required min="1">
             </div>
         </div>
         <div class="form-group">
-            <label for="OS" class="col-sm-2 control-label">OS (Only letters)</label>
+            <label for="OS" class="col-sm-2 control-label">OS</label>
             <div class="col-sm-10">
-                <input name="OS" type="text" class="form-control" id="OS" pattern="[A-Za-z]" required>
+                <input name="OS" type="text" class="form-control" id="OS"  required>
             </div>
         </div>
         <div class="form-group">

@@ -2,6 +2,7 @@ package com.futureTech.controller;
 
 import com.futureTech.entity.Tablet;
 import com.futureTech.service.BrandService;
+import com.futureTech.service.CommodityService;
 import com.futureTech.service.TabletService;
 import com.futureTech.serviceImpl.ImageSaver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class TabletController {
     @Autowired
     TabletService tabletService;
 
+
+    @Autowired
+    CommodityService commodityService;
 
     @Autowired
     BrandService brandService;
@@ -111,6 +115,7 @@ public class TabletController {
     {
         model.addAttribute("tablets", tabletService.findAllPages(pageable));
         model.addAttribute("brands", brandService.findAll());
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         return "views-user-tabletList";
 
 

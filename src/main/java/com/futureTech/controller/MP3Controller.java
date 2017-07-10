@@ -2,6 +2,7 @@ package com.futureTech.controller;
 
 import com.futureTech.entity.MP3;
 import com.futureTech.service.BrandService;
+import com.futureTech.service.CommodityService;
 import com.futureTech.service.MP3Service;
 import com.futureTech.serviceImpl.ImageSaver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ public class MP3Controller {
     @Autowired
     MP3Service mp3Service;
 
+    @Autowired
+    CommodityService commodityService;
+
     @GetMapping("/newMP3")
     public String newMP3(Model model)
     {
@@ -38,6 +42,7 @@ public class MP3Controller {
     public  String mp3List(Model model, @PageableDefault Pageable pageable) {
         model.addAttribute("mp3list", mp3Service.findAllPages(pageable));
         model.addAttribute("brands", brandService.findAll());
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         return "views-user-mp3list";
     }
 

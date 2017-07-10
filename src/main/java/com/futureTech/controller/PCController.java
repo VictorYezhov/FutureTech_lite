@@ -2,6 +2,7 @@ package com.futureTech.controller;
 
 import com.futureTech.entity.PC;
 import com.futureTech.service.BrandService;
+import com.futureTech.service.CommodityService;
 import com.futureTech.service.PCService;
 import com.futureTech.serviceImpl.ImageSaver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ public class PCController {
 
     @Autowired
     PCService pcService;
+
+    @Autowired
+    CommodityService commodityService;
 
 
 
@@ -108,6 +112,7 @@ public class PCController {
     {
         model.addAttribute("computers", pcService.findAllPages(pageable));
         model.addAttribute("brands", brandService.findAll());
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         return "views-user-pcList";
     }
 

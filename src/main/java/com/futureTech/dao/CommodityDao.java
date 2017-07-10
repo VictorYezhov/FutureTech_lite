@@ -20,4 +20,7 @@ public interface CommodityDao extends JpaRepository<Commodity, Integer> {
     @Query("select  c from  Commodity  c where  c.price between  :startPrice and  :endPrice")
     List<Commodity> findCommoditiesByPrices(@Param("startPrice") double startPrice, @Param("endPrice") double endPrice);
 
+    @Query("select max(c.price)  from  Commodity c")
+    double findCommodityWitMaxPrice();
+
 }

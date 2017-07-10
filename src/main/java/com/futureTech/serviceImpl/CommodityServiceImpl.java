@@ -51,4 +51,10 @@ public class CommodityServiceImpl implements CommodityService{
     public List<Commodity> findCommoditiesByPrices(double startPrice, double endPrice) {
         return commodityDao.findCommoditiesByPrices(startPrice,endPrice);
     }
+
+    @Override
+    public double findCommodityWitMaxPrice() {
+
+        return commodityDao.findCommodityWitMaxPrice();
+    }
 }
