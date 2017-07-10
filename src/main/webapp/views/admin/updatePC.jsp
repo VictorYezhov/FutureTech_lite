@@ -32,7 +32,7 @@
     <div class="form-group">
         <label for="price" class="col-sm-2 control-label">Price</label>
         <div class="col-sm-10">
-            <input name="price" type="number" class="form-control" id="price" value="${pc.price}" required="required">
+            <input name="price" type="number" class="form-control" id="price" value="${pc.price}" required="required" min="1">
         </div>
     </div>
 
@@ -52,13 +52,13 @@
     <div class="form-group">
         <label for="memory" class="col-sm-2 control-label">Memory Gb</label>
         <div class="col-sm-10">
-            <input name="memory" type="number" class="form-control" id="memory" value="${pc.memory}" required="required">
+            <input name="memory" type="number" class="form-control" id="memory" value="${pc.memory}" required="required" min="1">
         </div>
     </div>
     <div class="form-group">
         <label for="RAM" class="col-sm-2 control-label">RAM Gb</label>
         <div class="col-sm-10">
-            <input  name="RAM" type="number" class="form-control" id="RAM"  value="${pc.RAM}" required="required">
+            <input  name="RAM" type="number" class="form-control" id="RAM"  value="${pc.RAM}" required="required" min="1">
         </div>
     </div>
     <div class="form-group">
@@ -76,7 +76,7 @@
     <div class="form-group">
         <label for="weight" class="col-sm-2 control-label">weight</label>
         <div class="col-sm-10">
-            <input name="weight" type="number" class="form-control" id="weight" value="${pc.weight}" required="required">
+            <input name="weight" type="number" class="form-control" id="weight" value="${pc.weight}" required="required" min="1">
         </div>
     </div>
     <div class="form-group">

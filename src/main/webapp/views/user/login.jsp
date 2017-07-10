@@ -24,7 +24,7 @@
         <!-- Sign-in -->
     </div>
     <div>
-        <p>Haven`t got account yet? <a href="/signUp"><spring:message code="label.signUp"/></a></p>
+        <p><spring:message code="label.prorosal_of_register"/> <a href="/signUp"><spring:message code="label.signUp"/></a></p>
     </div>
 </div>
 

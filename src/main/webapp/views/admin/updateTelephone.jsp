@@ -32,7 +32,7 @@
     <div class="form-group">
         <label for="price" class="col-sm-2 control-label">Price</label>
         <div class="col-sm-10">
-            <input name="price" type="number" class="form-control" id="price" value="${telephone.price}" required>
+            <input name="price" type="number" class="form-control" id="price" value="${telephone.price}" required min="1">
         </div>
     </div>
     <div class="form-group">
@@ -60,31 +60,31 @@
     <div class="form-group">
         <label for="battery" class="col-sm-2 control-label">Battery Capacity</label>
         <div class="col-sm-10">
-            <input name="battery" type="number" class="form-control" id="battery" value="${telephone.batteryCapacity}" required>
+            <input name="battery" type="number" class="form-control" id="battery" value="${telephone.batteryCapacity}" required min="1">
         </div>
     </div>
     <div class="form-group">
         <label for="ammountofsim" class="col-sm-2 control-label">Amount of sim cards</label>
         <div class="col-sm-10">
-            <input name="amounts" type="number" class="form-control" id="ammountofsim" value="${telephone.amountOfSimCards}" required>
+            <input name="amounts" type="number" class="form-control" id="ammountofsim" value="${telephone.amountOfSimCards}" required min="1">
         </div>
     </div>
     <div class="form-group">
         <label for="memory" class="col-sm-2 control-label">Memory Gb</label>
         <div class="col-sm-10">
-            <input name="memory" type="number" class="form-control" id="memory" value="${telephone.memory}" required>
+            <input name="memory" type="number" class="form-control" id="memory" value="${telephone.memory}" required min="1">
         </div>
     </div>
     <div class="form-group">
         <label for="RAM" class="col-sm-2 control-label">RAM Gb</label>
         <div class="col-sm-10">
-            <input  name="RAM" type="number" class="form-control" id="RAM" value="${telephone.RAM}" required>
+            <input  name="RAM" type="number" class="form-control" id="RAM" value="${telephone.RAM}" required min="1">
         </div>
     </div>
     <div class="form-group">
         <label for="camera" class="col-sm-2 control-label">Camera</label>
         <div class="col-sm-10">
-            <input name="camera" type="text" class="form-control" id="camera" value="${telephone.camera}" required>
+            <input name="camera" type="text" class="form-control" id="camera" value="${telephone.camera}" required min="1">
         </div>
     </div>
     <div class="form-group">
@@ -96,7 +96,7 @@
     <div class="form-group">
         <label for="Screendiagonal" class="col-sm-2 control-label">Screen diagonal</label>
         <div class="col-sm-10">
-            <input name="Screendiagonal" type="number" class="form-control" id="Screendiagonal" value="${telephone.screenDiagonal}" required>
+            <input name="Screendiagonal" type="number" class="form-control" id="Screendiagonal" value="${telephone.screenDiagonal}" required min="1">
         </div>
     </div>
     <div class="form-group">

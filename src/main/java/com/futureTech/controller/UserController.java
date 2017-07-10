@@ -56,7 +56,7 @@ public class UserController {
     public String signUp(Model model) {
         model.addAttribute("user", new User());
         model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
-        return "views-user-singUp";
+        return "views-user-registration";
     }
 
     @PostMapping("/signUp")
@@ -72,7 +72,7 @@ public class UserController {
         {
             model.addAttribute("passwordException", "Passwords are not same");
             model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
-            return "views-user-signUp";
+            return "views-user-registration";
         }
 
 
@@ -92,7 +92,7 @@ public class UserController {
             }
 
             System.out.println("user = " + user);
-            return "views-user-signUp";
+            return "views-user-registration";
         }
 
         String theme = "Confirm registration";
@@ -120,7 +120,7 @@ public class UserController {
     {
 
         User user = userService.findOne(id);
-        if(user.isEnable()==false) {
+        if(!user.isEnable()) {
             user.setEnable(true);
         }
         else {

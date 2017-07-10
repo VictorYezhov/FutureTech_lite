@@ -34,20 +34,20 @@
     <div class="form-group">
         <label for="price" class="col-sm-2 control-label">Price</label>
         <div class="col-sm-10">
-            <input name="price" type="number" class="form-control" id="price" value="${mp3.price}" required="required">
+            <input name="price" type="number" class="form-control" id="price" value="${mp3.price}" required="required" min="1">
         </div>
     </div>
     <div class="form-group">
         <label for="battery" class="col-sm-2 control-label">Battery Capacity</label>
         <div class="col-sm-10">
-            <input name="battery" type="number" class="form-control" id="battery" min="1" value="${mp3.batteryCapacity}" required="required">
+            <input name="battery" type="number" class="form-control" id="battery" min="1" value="${mp3.batteryCapacity}" required="required" min="1">
         </div>
     </div>
 
     <div class="form-group">
         <label for="memory" class="col-sm-2 control-label">Memory Gb</label>
         <div class="col-sm-10">
-            <input name="memory" type="number" class="form-control" id="memory" min="1" value="${mp3.memory}" required="required">
+            <input name="memory" type="number" class="form-control" id="memory" min="1" value="${mp3.memory}" required="required" min="1">
         </div>
     </div>
 

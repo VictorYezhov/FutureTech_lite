@@ -33,7 +33,7 @@
     <div class="form-group">
         <label for="price" class="col-sm-2 control-label">Price</label>
         <div class="col-sm-10">
-            <input name="price" type="number" class="form-control" id="price" value="${tablet.price}" required="required">
+            <input name="price" type="number" class="form-control" id="price" value="${tablet.price}" required="required" min="1">
         </div>
     </div>
 
@@ -51,31 +51,31 @@
     <div class="form-group">
         <label for="battery" class="col-sm-2 control-label">Battery Capacity</label>
         <div class="col-sm-10">
-            <input name="battery" type="number" class="form-control" id="battery" value="${tablet.batteryCapacity}" required="required">
+            <input name="battery" type="number" class="form-control" id="battery" value="${tablet.batteryCapacity}" required="required" min="1">
         </div>
     </div>
     <div class="form-group">
         <label for="ammountofsim" class="col-sm-2 control-label">Amount of sim cards</label>
         <div class="col-sm-10">
-            <input name="amounts" type="number" class="form-control" id="ammountofsim" value="${tablet.amountOfSimCards}" required="required">
+            <input name="amounts" type="number" class="form-control" id="ammountofsim" value="${tablet.amountOfSimCards}" required="required" min="0">
         </div>
     </div>
     <div class="form-group">
         <label for="memory" class="col-sm-2 control-label">Memory Gb</label>
         <div class="col-sm-10">
-            <input name="memory" type="number" class="form-control" id="memory" value="${tablet.memory}" required="required">
+            <input name="memory" type="number" class="form-control" id="memory" value="${tablet.memory}" required="required" min="1">
         </div>
     </div>
     <div class="form-group">
         <label for="RAM" class="col-sm-2 control-label">RAM Gb</label>
         <div class="col-sm-10">
-            <input  name="RAM" type="number" class="form-control" id="RAM" value="${tablet.RAM}" required="required">
+            <input  name="RAM" type="number" class="form-control" id="RAM" value="${tablet.RAM}" required="required" min="1">
         </div>
     </div>
     <div class="form-group">
         <label for="camera" class="col-sm-2 control-label">Camera</label>
         <div class="col-sm-10">
-            <input name="camera" type="text" class="form-control" id="camera" value="${tablet.camera}" required="required">
+            <input name="camera" type="text" class="form-control" id="camera" value="${tablet.camera}" required="required" min="1">
         </div>
     </div>
     <div class="form-group">
@@ -87,7 +87,7 @@
     <div class="form-group">
         <label for="Screendiagonal" class="col-sm-2 control-label">Screen diagonal</label>
         <div class="col-sm-10">
-            <input name="Screendiagonal" type="number" class="form-control" id="Screendiagonal" value="${tablet.screenDiagonal}" required="required">
+            <input name="Screendiagonal" type="number" class="form-control" id="Screendiagonal" value="${tablet.screenDiagonal}" required="required" min="1">
         </div>
     </div>
     <div class="form-group">

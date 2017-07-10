@@ -96,7 +96,7 @@
         <div class="form-group">
             <label for="Screendiagonal" class="col-sm-2 control-label">Screen diagonal</label>
             <div class="col-sm-10">
-                <input name="Screendiagonal" type="number" class="form-control" id="Screendiagonal" required>
+                <input name="Screendiagonal" type="number" class="form-control" id="Screendiagonal" required min="1">
             </div>
         </div>
         <div class="form-group">
