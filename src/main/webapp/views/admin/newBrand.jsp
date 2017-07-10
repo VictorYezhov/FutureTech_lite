@@ -41,6 +41,7 @@
                             <th>Brand Name</th>
                             <th>Logo</th>
                             <th>Action</th>
+                            <th>Update</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,6 +51,7 @@
                             <td><c:if test="${brand.pathImage==null}"> <img src="resources/default/no_image.png" style="width: 75px; height: auto;"></c:if>
                                 <c:if test="${brand.pathImage!=null}"> <img src="${brand.pathImage}" style="width: 75px; height: auto;"></td></c:if>
                                 <td><button class="btn btn-danger" onclick="window.location.href='/deleteBrand/${brand.id}'"><i class="fa fa-trash-o"> Delete</i></button></td>
+                                <td><button class="btn btn-success" onclick="window.location.href='/updateBrand/${brand.id}'"><i class="fa fa-refresh"> Update</i></button></td>
                         </tr>
                         </c:forEach>
                     </tbody>

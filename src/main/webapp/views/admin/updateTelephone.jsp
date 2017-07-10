@@ -84,7 +84,7 @@
     <div class="form-group">
         <label for="camera" class="col-sm-2 control-label">Camera</label>
         <div class="col-sm-10">
-            <input name="camera" type="text" class="form-control" id="camera" value="${telephone.camera}" required min="1">
+            <input name="camera" type="number" class="form-control" id="camera" value="${telephone.camera}" required min="1" >
         </div>
     </div>
     <div class="form-group">

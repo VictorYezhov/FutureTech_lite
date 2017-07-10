@@ -87,10 +87,12 @@ public class CommodityController {
     @GetMapping("/addtoCart/{id}")
     public String addToCard(@PathVariable int id,  Model model, Principal principal) throws Exception {
 
+        model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         if(principal==null)
         {
             model.addAttribute("user", new User());
-            return "views-user-signUp";
+            model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
+            return "views-user-registration";
         }
         if(principal.getName().equals("admin"))
         {

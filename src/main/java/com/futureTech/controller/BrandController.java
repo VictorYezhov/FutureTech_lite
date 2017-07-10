@@ -2,6 +2,8 @@ package com.futureTech.controller;
 
 import com.futureTech.entity.Brand;
 import com.futureTech.service.BrandService;
+import com.futureTech.service.CommodityService;
+import com.futureTech.serviceImpl.ImageSaver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,9 @@ public class BrandController {
 
     @Autowired
     BrandService brandService;
+
+    @Autowired
+    CommodityService commodityService;
 
 
     @GetMapping("/newBrand")
@@ -46,14 +51,42 @@ public class BrandController {
         return "redirect:/newBrand";
     }
 
+    @GetMapping("/updateBrand/{id}")
+    public  String updateBrand(@PathVariable int id, Model model)
+    {
+
+        model.addAttribute("brand",brandService.findOne(id));
+        model.addAttribute("id",id);
+        return "updateBrand";
+    }
+
+    @PostMapping("/updateBrand/{id}")
+    public String saveUpdatedBrand(@RequestParam("name") String name, @RequestParam MultipartFile image, @PathVariable int id)
+    {
+        Brand brand = brandService.findOne(id);
+
+        brand.setName(name);
+        if(!image.getOriginalFilename().equals(""))
+        {
+            ImageSaver.saveImage(brand,image);
+        }
+
+        brandService.update(brand);
+
+
+        return "redirect:/newBrand";
+    }
+
     @GetMapping("/deleteBrand/{id}")
-    public  String deleteBrand(@PathVariable int id)
+    public  String deleteBrand(@PathVariable int id, Model model)
     {
 
         try {
             brandService.delete(id);
         }catch (Exception e){
-            return "redirect:/newBrand";
+            model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
+            model.addAttribute("brandExeption", "To this brand attached some commodities, you cant delete it");
+            return "views-user-error";
         }
 
         return "redirect:/newBrand";

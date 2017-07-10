@@ -64,6 +64,11 @@
         <put-attribute name="body" value="/views/admin/updateMp3.jsp"></put-attribute>
     </definition>
 
+
+    <definition name="updateBrand" extends="admin.definition">
+        <put-attribute name="body" value="/views/admin/updateBrand.jsp"></put-attribute>
+    </definition>
+
 </tiles-definitions>
 
     <!--<tiles-definitions>-->

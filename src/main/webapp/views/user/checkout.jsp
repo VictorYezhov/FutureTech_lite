@@ -37,8 +37,8 @@
 </div>
 <form:form action="/buy/${id}" method="post">
 <h3>Please choose payment option</h3>
-<select  name="payment" class="form-control" style="width: 200px">
-    <option value="-1">Choose please</option>
+<select  name="payment" class="form-control" style="width: 200px" required>
+    <option value="">Choose please</option>
     <option value="1">Credit card</option>
     <option value="2">Cash when delivered</option>
     <option value="3">WebMoney</option>
@@ -47,8 +47,8 @@
 <br>
 <br>
 <h3>Please choose way of delivering</h3>
-<select  name="delivering" class="form-control" style="width: 200px">
-    <option value="-1">Choose please</option>
+<select  name="delivering" class="form-control" style="width: 200px" required>
+    <option value="">Choose please</option>
     <option value="1">By Post</option>
     <option value="2">By your own</option>
 </select>

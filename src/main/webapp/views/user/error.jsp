@@ -12,5 +12,6 @@
 <p>${adminError}</p>
 <p>${deletingError}</p>
 <p>${errorWithCommodity}</p>
+<p>${brandExeption}</p>
 
 
