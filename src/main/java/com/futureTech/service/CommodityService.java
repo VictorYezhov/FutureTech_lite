@@ -25,4 +25,7 @@ public interface CommodityService {
 
     double findCommodityWitMaxPrice();
 
+    Long count();
+
+
 }

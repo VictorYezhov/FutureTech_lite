@@ -1,3 +1,9 @@
+<center>
+<div style="align-content: center">
+    <h1>Today we have<br>${comm_Count}<br> different amazing features  for you </h1>
+</div>
+</center>
+
 <div class="info-boxes-inner">
     <div class="row">
 

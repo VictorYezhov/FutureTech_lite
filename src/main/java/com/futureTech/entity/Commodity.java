@@ -26,6 +26,7 @@ public  abstract class Commodity {
 
     @ManyToOne
     private Brand brand;
+
     private double price;
     private String name;
     private  String type;

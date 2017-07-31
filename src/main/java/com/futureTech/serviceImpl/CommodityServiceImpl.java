@@ -57,4 +57,9 @@ public class CommodityServiceImpl implements CommodityService{
 
         return commodityDao.findCommodityWitMaxPrice();
     }
+
+    @Override
+    public Long count() {
+        return commodityDao.count();
+    }
 }

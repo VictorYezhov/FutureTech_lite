@@ -36,6 +36,9 @@
     <definition name="newMobileTelephone" extends="admin.definition">
         <put-attribute name="body" value="/views/admin/newMobileTelephone.jsp" />
     </definition>
+
+
+
     <definition name="newMusicPlayer" extends="admin.definition">
         <put-attribute name="body" value="/views/admin/newMusicPlayer.jsp"></put-attribute>
     </definition>

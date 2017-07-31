@@ -45,6 +45,7 @@ public class UserController {
 
     @Autowired
     private CommodityService commodityService;
+
     @GetMapping("/login")
     public String login(Model model) {
         model.addAttribute("user", new User());

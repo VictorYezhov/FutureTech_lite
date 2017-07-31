@@ -36,6 +36,8 @@ public class IndexController {
         model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
         model.addAttribute("brands", brandService.findAll());
 
+        model.addAttribute("comm_Count",commodityService.count());
+
         return "views-base-index";
     }
 
@@ -53,6 +55,7 @@ public class IndexController {
 //        }
 
         model.addAttribute("maxPrice",commodityService.findCommodityWitMaxPrice());
+        model.addAttribute("comm_Count",commodityService.count());
         return "views-base-index";
     }
 
